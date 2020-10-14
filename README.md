@@ -1,61 +1,22 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+﻿# Teste Accordous!
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+O sistema **Teste Accordous** tem o intuito de automatizar a contratação de imóveis. Facilitando assim o processo de busca por um imóvel e a geração do contrato de locação.
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Instalação
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+O sistema funciona totalmente **online**, mas caso seu intuito seja utiliza-lo em um ambiente de trabalho local, aqui segue o passo a passo de como realizar a instalação e configuração do mesmo.
+**obs:** Para melhor entendimento e diminuição de riscos, peça para um técnico em informática te auxiliar no processo se possível.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Windows
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+ 1. Faça o download do arquivo **.zip**.
+ 2. Caso não possua o MySQL e nem o PHP instalado em sua máquina realize o download e instalação do [xampp](https://www.apachefriends.org/pt_br/index.html).
+ 3. Ao concluir a instalação do xampp, inicie o serviço do MySQL e PHP.
+ 4. Crie um Banco de Dados com o nome accordous.
+ 5. Descompacte o arquivo **.zip** do sistema que você realizou o download anteriormente.
+ 6. Abra o **Prompt Comando (CMD)** do windows.
+ 7. Navegue para dentro da pasta do sistema que você descompactou.
+ 8. Execute o seguinte comando.`php artisan migrate`, este comando irá criar as tabelas necessárias para o funcionamento correto do sistema.
+ 9. Após concluir a criação das tabelas inicie o sistema executando o seguinte comando `php artisan serve --host=0.0.0.0`, o comando **--host** permite que o sistema fique acessível para uso em rede utilizando o ip da sua máquina.
+ 10. Ao concluir todos os passos com sucesso basta abrir seu navegador utilizando [http://localhost:8000](http://localhost:8000) ou em outro dispositivo da sua rede trocando **localhost** pelo ip da sua maquina que está executando o sistema.
