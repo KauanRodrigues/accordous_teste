@@ -1,0 +1,81 @@
+/*
+    Estilo da tela de login
+*/
+
+.bg_login
+{
+    background-image: url('../images/bg_login.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sobreposicao_cor
+{
+    background-color: rgba(135, 135, 135, 0.3);
+    width: 100%;
+    height: 100vh;
+}
+
+::placeholder
+{
+    color: #fff !important;
+    font-size: 10px !important;
+}
+
+.select2
+{
+    width: 100% !important;
+}
+
+.select2-selection, .select2-container, .select2-dropdown, .select2-search
+{
+    border-radius: 0px !important;
+}
+
+.card
+{
+    padding-top: 50%;
+    background-color: transparent;
+    border: none;
+}
+
+button
+{
+    border-radius: 25px !important;
+}
+
+input
+{
+    color: #fff !important;
+    padding: 15px !important;
+    border-radius: 25px !important;
+    background-color: transparent !important;
+    padding: 18px !important;
+    border-color: #fff !important;
+}
+
+.load
+{
+    width: 100%;
+    height: 100vh;
+    /* position: absolute; */
+    z-index: 99px !important;
+    background-color: #fff;
+}
+
+.load img
+{
+    position: absolute;
+    top: 30% !important;
+    left: 45% !important;
+}
+
+.load p
+{
+    font-size: 20px;
+    color: rgb(21, 33, 185);
+    font-weight: 700;
+    position: absolute;
+    top: 50% !important;
+    left: 46% !important;
+}
