@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="proprietario">Proprietário</label>
+                            <label for="proprietario">Proprietário<span class="text-danger">*</span></label>
                             <select id="proprietario"></select>
                         </div>
                     </div>
