@@ -47,10 +47,10 @@
 <strong>obs:</strong> Para melhor entendimento e diminuição de riscos, peça para um técnico em informática te auxiliar no processo se possível.</p>
 <h2 id="windows">Windows</h2>
 <ol>
-<li>Faça o download do arquivo <strong>.zip</strong>.</li>
+<li>Faça o download do arquivo <strong>.zip</strong> ou execute um <code>git clone</code>.</li>
 <li>Realize o download e instalação do <a href="https://www.docker.com/get-started">Docker</a>.</li>
-<li>Agora vamos descompactar o arquivo <strong>.zip</strong> que realizamos o download.</li>
-<li>Abra o <strong>CMD</strong> do Windows e navegue até a pasta descompactada.</li>
+<li>Agora vamos acessar a pasta do projeto que você descompactou ou clonou via git.</li>
+<li>Segure a tecla <strong>SHIFT</strong> do seu teclado e clique em algum lugar da tela com o <strong>botão direito</strong> do mouse, agora clique na opção <strong>abrir janela do PowerShell aqui</strong>.</li>
 <li>Agora execute o seguinte comando <code>docker-compose up -d</code>, este comando é responsável pela criação dos containers onde ficaram armazenados o <strong>MySQL</strong> e a nossa <strong>Aplicação Laravel</strong>.</li>
 <li>Execute o comando <code>docker ps</code> para poder saber se está tudo ok com nossos containers.</li>
 <li>Vamos agora executar o seguinte comando <code>php artisan migrate --seed</code> para podermos criar as nossas tabelas em nosso banco de dados.</li>

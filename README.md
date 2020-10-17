@@ -10,15 +10,15 @@ O sistema funciona totalmente **online**, mas caso seu intuito seja utiliza-lo e
 
 ## Windows
 
- 1. Faça o download do arquivo **.zip**.
+ 1. Faça o download do arquivo **.zip** ou execute um `git clone`.
  2. Realize o download e instalação do [Docker](https://www.docker.com/get-started).
- 3. Agora vamos descompactar o arquivo **.zip** que realizamos o download.
- 4. Abra o **CMD** do Windows e navegue até a pasta descompactada.
- 5. Agora execute o seguinte comando `docker-compose up -d`, este comando é responsável pela criação dos containers onde ficaram armazenados o **MySQL** e a nossa **Aplicação Laravel**.
- 6. Execute o comando `docker ps` para poder saber se está tudo ok com nossos containers.
- 7. Vamos agora executar o seguinte comando `php artisan migrate --seed` para podermos criar as nossas tabelas em nosso banco de dados.
- 8. Agora você vai até a pasta que você descompactou e vai procurar pelo arquivo chamado **.env**, pode abri-lo com o editor de texto de sua preferência e vamos alterar a linha **DB_HOST=127.0.0.1** para **DB_HOST=172.20.0.1**, isso vai fazer com que nossa aplicação na hora de acessar o Banco de Dados, seja redirecionada para o container do **MySQL**.
- 9. Pronto, agora vamos testar nossa aplicação acessando [http://localhost:8000](http://localhost:8000). O login padrão é **Usuário: admin** e **Senha: admin**.
+ 3. Agora vamos acessar a pasta do projeto que você descompactou ou clonou via git.
+ 4. Segure a tecla **SHIFT** do seu teclado e clique em algum lugar da tela com o **botão direito** do mouse, agora clique na opção **abrir janela do PowerShell aqui**.
+ 6. Agora execute o seguinte comando `docker-compose up -d`, este comando é responsável pela criação dos containers onde ficaram armazenados o **MySQL** e a nossa **Aplicação Laravel**.
+ 7. Execute o comando `docker ps` para poder saber se está tudo ok com nossos containers.
+ 8. Vamos agora executar o seguinte comando `php artisan migrate --seed` para podermos criar as nossas tabelas em nosso banco de dados.
+ 9. Agora você vai até a pasta que você descompactou e vai procurar pelo arquivo chamado **.env**, pode abri-lo com o editor de texto de sua preferência e vamos alterar a linha **DB_HOST=127.0.0.1** para **DB_HOST=172.20.0.1**, isso vai fazer com que nossa aplicação na hora de acessar o Banco de Dados, seja redirecionada para o container do **MySQL**.
+ 10. Pronto, agora vamos testar nossa aplicação acessando [http://localhost:8000](http://localhost:8000). O login padrão é **Usuário: admin** e **Senha: admin**.
 
 # Funcionalidades
 Agora iremos ensinar como funciona cada funcionalidade do sistema.
