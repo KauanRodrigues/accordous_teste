@@ -11,17 +11,16 @@ O sistema funciona totalmente **online**, mas caso seu intuito seja utiliza-lo e
 ## Windows
 
  1. Faça o download do arquivo **.zip**.
- 2. Caso não possua o MySQL e nem o PHP instalado em sua máquina realize o download e instalação do [xampp](https://www.apachefriends.org/pt_br/index.html).
- 3. Ao concluir a instalação do xampp, inicie o serviço do MySQL e PHP.
- 4. Crie um Banco de Dados com o nome accordous.
- 5. Descompacte o arquivo **.zip** do sistema que você realizou o download anteriormente.
- 6. Abra o **Prompt Comando (CMD)** do windows.
- 7. Navegue para dentro da pasta do sistema que você descompactou.
- 8. Execute o seguinte comando.`php artisan migrate`, este comando irá criar as tabelas necessárias para o funcionamento correto do sistema.
- 9. Após concluir a criação das tabelas inicie o sistema executando o seguinte comando `php artisan serve --host=0.0.0.0`, o comando **--host** permite que o sistema fique acessível para uso em rede utilizando o ip da sua máquina.
- 10. Ao concluir todos os passos com sucesso basta abrir seu navegador utilizando [http://localhost:8000](http://localhost:8000) ou em outro dispositivo da sua rede trocando **localhost** pelo ip da sua maquina que está executando o sistema.
+ 2. Realize o download e instalação do [Docker](https://www.docker.com/get-started).
+ 3. Agora vamos descompactar o arquivo **.zip** que realizamos o download.
+ 4. Abra o **CMD** do Windows e navegue até a pasta descompactada.
+ 5. Agora execute o seguinte comando `docker-compose up -d`, este comando é responsável pela criação dos containers onde ficaram armazenados o **MySQL** e a nossa **Aplicação Laravel**.
+ 6. Execute o comando `docker ps` para poder saber se está tudo ok com nossos containers.
+ 7. Vamos agora executar o seguinte comando `php artisan migrate --seed` para podermos criar as nossas tabelas em nosso banco de dados.
+ 8. Agora você vai até a pasta que você descompactou e vai procurar pelo arquivo chamado **.env**, pode abri-lo com o editor de texto de sua preferência e vamos alterar a linha **DB_HOST=127.0.0.1** para **DB_HOST=172.20.0.1**, isso vai fazer com que nossa aplicação na hora de acessar o Banco de Dados, seja redirecionada para o container do **MySQL**.
+ 9. Pronto, agora vamos testar nossa aplicação acessando [http://localhost:8000](http://localhost:8000). O login padrão é **Usuário: admin** e **Senha: admin**.
 
-#Funcionalidades
+# Funcionalidades
 Agora iremos ensinar como funciona cada funcionalidade do sistema.
 
 ## Login

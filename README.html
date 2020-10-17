@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste Accordous</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#teste-accordous">Teste Accordous!</a></li>
+<li><a href="#instalação">Instalação</a>
+<ul>
+<li><a href="#windows">Windows</a></li>
+</ul>
+</li>
+<li><a href="#funcionalidades">Funcionalidades</a>
+<ul>
+<li><a href="#login">Login</a></li>
+<li><a href="#cadastro">Cadastro</a></li>
+<li><a href="#operações">Operações</a></li>
+<li><a href="#relatórios">Relatórios</a></li>
+<li><a href="#nome-do-funcionário">Nome do Funcionário</a></li>
+</ul>
+</li>
+<li><a href="#tecnologias-utilizadas">Tecnologias Utilizadas</a></li>
+<li><a href="#desenvolvedores">Desenvolvedores</a>
+<ul>
+<li><a href="#sobre-o-desenvolvedor">Sobre o desenvolvedor</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="teste-accordous">Teste Accordous!</h1>
+<p>O sistema <strong>Teste Accordous</strong> tem o intuito de automatizar a contratação de imóveis. Facilitando assim o processo de busca por um imóvel e a geração do contrato de locação.</p>
+<h1 id="instalação">Instalação</h1>
+<p>O sistema funciona totalmente <strong>online</strong>, mas caso seu intuito seja utiliza-lo em um ambiente de trabalho local, aqui segue o passo a passo de como realizar a instalação e configuração do mesmo.<br>
+<strong>obs:</strong> Para melhor entendimento e diminuição de riscos, peça para um técnico em informática te auxiliar no processo se possível.</p>
+<h2 id="windows">Windows</h2>
+<ol>
+<li>Faça o download do arquivo <strong>.zip</strong>.</li>
+<li>Realize o download e instalação do <a href="https://www.docker.com/get-started">Docker</a>.</li>
+<li>Agora vamos descompactar o arquivo <strong>.zip</strong> que realizamos o download.</li>
+<li>Abra o <strong>CMD</strong> do Windows e navegue até a pasta descompactada.</li>
+<li>Agora execute o seguinte comando <code>docker-compose up -d</code>, este comando é responsável pela criação dos containers onde ficaram armazenados o <strong>MySQL</strong> e a nossa <strong>Aplicação Laravel</strong>.</li>
+<li>Execute o comando <code>docker ps</code> para poder saber se está tudo ok com nossos containers.</li>
+<li>Vamos agora executar o seguinte comando <code>php artisan migrate --seed</code> para podermos criar as nossas tabelas em nosso banco de dados.</li>
+<li>Agora você vai até a pasta que você descompactou e vai procurar pelo arquivo chamado <strong>.env</strong>, pode abri-lo com o editor de texto de sua preferência e vamos alterar a linha <strong>DB_HOST=127.0.0.1</strong> para <strong>DB_HOST=172.20.0.1</strong>, isso vai fazer com que nossa aplicação na hora de acessar o Banco de Dados, seja redirecionada para o container do <strong>MySQL</strong>.</li>
+<li>Pronto, agora vamos testar nossa aplicação acessando <a href="http://localhost:8000">http://localhost:8000</a>. O login padrão é <strong>Usuário: admin</strong> e <strong>Senha: admin</strong>.</li>
+</ol>
+<h1 id="funcionalidades">Funcionalidades</h1>
+<p>Agora iremos ensinar como funciona cada funcionalidade do sistema.</p>
+<h2 id="login">Login</h2>
+
+<table>
+<thead>
+<tr>
+<th>Campos</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Usuário</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Senha</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+</tbody>
+</table><p>Ao informar o usuário e a senha deve-se clicar no botão <strong>ENTRAR</strong> para que o login seja realizado.</p>
+<h2 id="cadastro">Cadastro</h2>
+<h3 id="funcionários">Funcionários</h3>
+
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nome</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>E-mail</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Usuário</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Senha</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+</tbody>
+</table><h3 id="proprietários">Proprietários</h3>
+
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nome</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>E-mail</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>CPF</td>
+<td>Number</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>CEP</td>
+<td>Number</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Logradouro</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Numero</td>
+<td>Number</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Bairro</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Cidade</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>UF</td>
+<td>Select</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Complemento</td>
+<td>String</td>
+<td>Não</td>
+</tr>
+</tbody>
+</table><h3 id="imóveis">Imóveis</h3>
+
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proprietário</td>
+<td>Select</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Quartos</td>
+<td>Number</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Andares</td>
+<td>Number</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Banheiros</td>
+<td>Number</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Cozinhas</td>
+<td>Number</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Salas</td>
+<td>Number</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Garagem</td>
+<td>Number</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>CEP</td>
+<td>Number</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Logradouro</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Numero</td>
+<td>Number</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Bairro</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Cidade</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>UF</td>
+<td>Select</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Complemento</td>
+<td>String</td>
+<td>Não</td>
+</tr>
+</tbody>
+</table><h2 id="operações">Operações</h2>
+<h3 id="aluguel">Aluguel</h3>
+
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Imóvel</td>
+<td>Select</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>E-mail</td>
+<td>String</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Documento</td>
+<td>Select</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>CPF / CNPJ</td>
+<td>Number</td>
+<td>Sim</td>
+</tr>
+</tbody>
+</table><h2 id="relatórios">Relatórios</h2>
+<h3 id="funcionários-1">Funcionários</h3>
+<p>Não precisa de nenhum tipo de filtro, pois a tela já carrega os funcionários cadastrados ao abrir a tela.</p>
+<h3 id="imóveis-1">Imóveis</h3>
+
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Status</td>
+<td>Select</td>
+<td>Sim</td>
+</tr>
+</tbody>
+</table><p>Ao selecionar o status deve-se clicar no botão <strong>Pesquisar</strong> para que possa ser alimentada a tabela com os registros.</p>
+<h3 id="proprietários-1">Proprietários</h3>
+<p>Não precisa de nenhum tipo de filtro, pois a tela já carrega os proprietários cadastrados ao abrir a tela.</p>
+<h2 id="nome-do-funcionário">Nome do Funcionário</h2>
+<h3 id="sair">Sair</h3>
+<p>Destroi todas as sessões de login e redireciona o usuário para a tela de login.</p>
+<h1 id="tecnologias-utilizadas">Tecnologias Utilizadas</h1>
+<ul>
+<li><strong>Framework:</strong> Laravel;</li>
+<li><strong>Linguagem:</strong> PHP 7, Javascript, HTML5, CSS3;</li>
+<li><strong>Framework Front-end:</strong> Bootstrap 4;</li>
+<li><strong>Banco de Dados:</strong> MySQL;</li>
+<li><strong>Editor:</strong> Visual Studio Code;</li>
+<li><strong>Plugins:</strong> DataTable, Select2, Jquery Mask;</li>
+</ul>
+<h1 id="desenvolvedores">Desenvolvedores</h1>
+
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Função</th>
+<th>Experiência (anos)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kauan F. Rodrigues</td>
+<td>Desenvolvedor WEB Full Stack</td>
+<td>4 anos</td>
+</tr>
+</tbody>
+</table><h2 id="sobre-o-desenvolvedor">Sobre o desenvolvedor</h2>
+<ul>
+<li><strong>Kauan F. Rodrigues:</strong> com 22 anos de idade, sendo 4 anos de experiência em desenvolvimento web. Com experiência em sistemas de gestão de lojas e varejo em geral, teve também como maior desafio e aprendizado quando trabalhou com sistemas de compra e venda de criptoativos como <strong>Bitcoin</strong>. Um profissional autodidata, apaixonado por desafios e pelo que faz, busca por conhecimento de coisas novas, é dedicado e procura dar o seu melhor naquilo que faz.</li>
+</ul>
+
+    </div>
+  </div>
+</body>
+
+</html>
