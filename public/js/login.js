@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $("#usuario").focus();
+});
+
 /**
  * Responsável por enviar os dados de login
  */
