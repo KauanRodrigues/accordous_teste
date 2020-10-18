@@ -31,7 +31,7 @@
                             </select>
                         </div>
                         <div class="form-group col-md-3">
-                            <button id="btn_pesquisar" class="btn btn-primary btn-sm btn-block btn_alinhado" onclick="pesquisar()">Pesquisar</button>
+                            <button id="btn_pesquisar" class="btn btn-primary btn-sm btn-block btn_alinhado button_request" onclick="pesquisar()">Pesquisar</button>
                         </div>
                     </div>
                 </div>

@@ -121,7 +121,7 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-4 offset-md-4">
-                            <button type="button" id="btn_salvar" class="btn btn-primary btn-sm btn-block" onclick="salvar()">SALVAR</button>
+                            <button type="button" id="btn_salvar" class="btn btn-primary btn-sm btn-block button_request" onclick="salvar()">SALVAR</button>
                         </div>
                     </div>
                 </div>

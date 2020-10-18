@@ -37,7 +37,7 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="form-group col-md-12">
-                                    <button type="submit" class="btn btn-sm btn-block btn-primary" id="btn_submit" onclick="logar()">ENTRAR</button>
+                                    <button type="submit" class="btn btn-sm btn-block btn-primary button_request" id="btn_submit" onclick="logar()">ENTRAR</button>
                                 </div>
                             </div>
                         </div>
