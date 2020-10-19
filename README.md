@@ -121,13 +121,13 @@ Destroi todas as sessões de login e redireciona o usuário para a tela de login
 
 # Tecnologias Utilizadas
 
- - **Framework:** Laravel;
- - **Linguagem:** PHP 7, Javascript, HTML5, CSS3;
+ - **Framework:** Laravel 8.10.0;
+ - **Linguagem:** PHP 7.4, Javascript, HTML5, CSS3;
  - **Framework Front-end:** Bootstrap 4;
- - **Banco de Dados:** MySQL;
+ - **Banco de Dados:** MySQL 5.7.31;
  - **Editor:** Visual Studio Code;
  - **Plugins:** DataTable, Select2, Jquery Mask;
- - **Ambiente de Desenvolvimento:** Docker;
+ - **Ambiente de Desenvolvimento:** Docker 19.03.8;
 
 # Desenvolvedores
 
