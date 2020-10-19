@@ -1,5 +1,10 @@
 $(document).ready(function(){
     $("#usuario").focus();
+
+    $("input").on('keypress', function(e){
+        if(e.keyCode == 13)
+            logar();
+    });
 });
 
 /**
