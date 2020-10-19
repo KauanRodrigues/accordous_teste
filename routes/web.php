@@ -63,8 +63,11 @@ Route::post('/cadastro/imoveis', 'ImoveisController@store');
  * ROUTE OPERAÇÕES
  */
 
+ // Responsável por redirecionar o usuário para a tela de operações de aluguel
  Route::get('/operacoes/aluguel', 'AlugueisController@create')->name('operacoes.aluguel');
+ // Responsável pela inserção dos imóveis alugados.
  Route::post('/operacoes/aluguel', 'AlugueisController@store');
+ // Responsável por buscar todos os imóveis cadastrados para a lista de imóveis na tela de aluguel
  Route::post('/operacoes/get_all_imoveis', 'AlugueisController@get_all_imoveis');
  /**
   * END ROUTE OPERAÇÕES
@@ -89,9 +92,13 @@ Route::post('/relatorio/get_all_funcionarios', 'FuncionariosController@get_all_f
 
 // Responsável por redirecionar o usuário para a tela de relatórios de funcionarios
 Route::get('/relatorio/proprietario', 'ProprietariosController@index')->name('relatorio.proprietarios');
+// Responsável por buscar todos os proprietários cadastrados para exibir no relatório
 Route::post('/relatorio/get_all_proprietarios', 'ProprietariosController@get_all_proprietarios');
+
+Route::post('/relatorio/imoveis/get_detalhes_imovel', 'ImoveisController@get_detalhes_imovel');
 /**
  * END ROUTE RELATÓRIOS
  */
 
+ // Responsável por realizar o Logout no sistema e destruir todas as sessoes do funcionário logado.
  Route::get('/logout', 'LoginController@logout')->name('logout');

@@ -5,15 +5,18 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Imoveis;
+use App\Models\Proprietarios;
 use Illuminate\Support\Facades\DB;
 
 class ImoveisController extends Controller
 {
     private $imoveis;
+    private $proprietarios;
 
-    function __construct(Imoveis $imoveis)
+    function __construct(Imoveis $imoveis, Proprietarios $proprietarios)
     {
         $this->imoveis = $imoveis;
+        $this->proprietarios = $proprietarios;
     }
 
     /**
@@ -102,5 +105,25 @@ class ImoveisController extends Controller
             DB::rollBack();
             return response()->json(false);
         }
+    }
+
+    /**
+     * Exibe detalhes do imóvel
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function get_detalhes_imovel(Request $request)
+    {
+        $response = $this->imoveis->select('imoveis.quartos', 'imoveis.garagem', 'imoveis.andares', 'imoveis.banheiros', 'imoveis.salas', 'imoveis.cozinhas',
+                                            'imoveis.logradouro', 'imoveis.bairro', 'imoveis.cidade', 'imoveis.uf', 'imoveis.numero', 'imoveis.complemento', 'imoveis.status',
+                                            'prop.nome AS nome_prop', 'prop.email AS email_prop', 'prop.cpf AS cpf_prop',
+                                            'alugueis.nome AS nome_contratante', 'alugueis.email AS email_contratante', 'alugueis.cpf_cnpj AS cpf_cnpj_contratante')
+                                    ->join('proprietarios AS prop', 'prop.id', '=', 'imoveis.fk_proprietario')
+                                    ->leftJoin('alugueis', 'alugueis.fk_imovel', '=', 'imoveis.id')
+                                    ->where([ [ 'imoveis.id', '=', $request->id ] ])
+                                    ->first();
+
+        return response()->json($response);
     }
 }

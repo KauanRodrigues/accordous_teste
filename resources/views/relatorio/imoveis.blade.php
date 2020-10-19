@@ -62,6 +62,7 @@
                                         <th width="40%">Proprietario</th>
                                         <th>Endereço</th>
                                         <th width="10%"></th>
+                                        <th width="10%"></th>
                                     </tr>
                                 </thead>
                                 <tbody></tbody>
