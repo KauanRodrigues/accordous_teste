@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teste Accordous</title>
+  <title>README.md</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
 </head>
 
@@ -49,8 +49,10 @@
 <ol>
 <li>Faça o download do arquivo <strong>.zip</strong> ou execute um <code>git clone</code>.</li>
 <li>Realize o download e instalação do <a href="https://www.docker.com/get-started">Docker</a>.</li>
+<li>Realize o download e configuração do <a href="https://getcomposer.org/">Composer</a>.</li>
 <li>Agora vamos acessar a pasta do projeto que você descompactou ou clonou via git.</li>
 <li>Segure a tecla <strong>SHIFT</strong> do seu teclado e clique em algum lugar da tela com o <strong>botão direito</strong> do mouse, agora clique na opção <strong>abrir janela do PowerShell aqui</strong>.</li>
+<li>Vamos carregar os arquivos que faltam para o Laravel fazer nosso sistema funcionar corretamente, para isso vamos executar o seguinte comando <code>composer update</code>, isso fará com que o composer baixe as dependências necessárias do Laravel (este procedimento poderá demorar alguns minutos devido a alta quantidade de arquivos que serão baixados).</li>
 <li>Agora execute o seguinte comando <code>docker-compose up -d</code>, este comando é responsável pela criação dos containers onde ficaram armazenados o <strong>MySQL</strong> e a nossa <strong>Aplicação Laravel</strong>.</li>
 <li>Execute o comando <code>docker ps</code> para poder saber se está tudo ok com nossos containers.</li>
 <li>Vamos agora executar o seguinte comando <code>php artisan migrate --seed</code> para podermos criar as nossas tabelas em nosso banco de dados.</li>
