@@ -6,17 +6,20 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Imoveis;
 use App\Models\Proprietarios;
+use App\Models\Alugueis;
 use Illuminate\Support\Facades\DB;
 
 class ImoveisController extends Controller
 {
     private $imoveis;
     private $proprietarios;
+    private $alugueis;
 
-    function __construct(Imoveis $imoveis, Proprietarios $proprietarios)
+    function __construct(Imoveis $imoveis, Proprietarios $proprietarios, Alugueis $alugueis)
     {
         $this->imoveis = $imoveis;
         $this->proprietarios = $proprietarios;
+        $this->alugueis = $alugueis;
     }
 
     /**
@@ -98,6 +101,13 @@ class ImoveisController extends Controller
     public function destroy(Request $request)
     {
         try{
+            $response = $this->alugueis->select('id')->where([ [ 'fk_imovel', '=', $request->id ] ])->first();
+
+            if(!empty($response))
+            {
+                $this->alugueis->where([ [ 'fk_imovel', '=', $request->id ] ])->delete();
+            }
+
             $this->imoveis->where([ [ 'imoveis.id', '=', $request->id ] ])->delete();
             DB::commit();
             return response()->json(true);

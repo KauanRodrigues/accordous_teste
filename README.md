@@ -12,7 +12,7 @@ O sistema funciona totalmente **online**, mas caso seu intuito seja utiliza-lo e
 
  1. Faça o download do arquivo **.zip** ou execute um `git clone`.
  2. Realize o download e instalação do [Docker](https://www.docker.com/get-started).
- 3. Realize o download e configuração do [Composer](https://getcomposer.org/).
+ 3. Realize o download e configuração do [Composer](https://getcomposer.org/).food
  4. Agora vamos acessar a pasta do projeto que você descompactou ou clonou via git.
  5. Segure a tecla **SHIFT** do seu teclado e clique em algum lugar da tela com o **botão direito** do mouse, agora clique na opção **abrir janela do PowerShell aqui**.
  6. Vamos carregar os arquivos que faltam para o Laravel fazer nosso sistema funcionar corretamente, para isso vamos executar o seguinte comando `composer update`, isso fará com que o composer baixe as dependências necessárias do Laravel (este procedimento poderá demorar alguns minutos devido a alta quantidade de arquivos que serão baixados).
@@ -104,6 +104,10 @@ Não precisa de nenhum tipo de filtro, pois a tela já carrega os funcionários 
 | Status | Select | Sim |
 
 Ao selecionar o status deve-se clicar no botão **Pesquisar** para que possa ser alimentada a tabela com os registros.
+A tabela com os resultados conta com dois botões de ação **Detalhes** e **Remover**.
+
+ - **Detalhes:** Exibe detalhes do imóvel se está **Contratada** ou **Não Contratada**, juntamente com detalhes do imóvel, proprietário e contratante.
+ - **Remover:** Remove o cadastro do imóvel. Caso ele já esteja contratado ele será removido também da tabela de alugueis.
 
 ### Proprietários
 
@@ -123,6 +127,7 @@ Destroi todas as sessões de login e redireciona o usuário para a tela de login
  - **Banco de Dados:** MySQL;
  - **Editor:** Visual Studio Code;
  - **Plugins:** DataTable, Select2, Jquery Mask;
+ - **Ambiente de Desenvolvimento:** Docker;
 
 # Desenvolvedores
 
